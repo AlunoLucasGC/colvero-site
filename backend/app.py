@@ -1,10 +1,10 @@
 #Importando Flask e renderizando arquivos HTML
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 #Criando a Aplicação
 app= Flask(__name__)
 
-#Criação da rota que representa a página inicial
+#Criação das rotas que representam as páginas
 @app.route("/")
 def inicio():
     return render_template("index.html")
@@ -15,7 +15,17 @@ def sobre ():
 
 @app.route("/contato", methods=["GET", "POST"])
 def contato ():
-    return render_template("contato.html")
+
+        if request.method=="POST":
+            nome=request.form["nome"]
+            telefone=request.form["telefone"]
+            mensagem=request.form["mensagem"]
+            
+            print(nome)
+            print(telefone)
+            print(mensagem) 
+    
+        return render_template("contato.html")
     
 #Inicia o servidor
 if __name__ == "__main__": 
