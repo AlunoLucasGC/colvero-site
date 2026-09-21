@@ -12,6 +12,10 @@ def inicio():
 @app.route("/sobre")
 def sobre ():
     return render_template("sobre.html")
+
+@app.route("/contato")
+def contato ():
+    return "Página de Contato Da Empresa"
     
 #Inicia o servidor
 if __name__ == "__main__": 
