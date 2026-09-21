@@ -13,7 +13,7 @@ def inicio():
 def sobre ():
     return render_template("sobre.html")
 
-@app.route("/contato")
+@app.route("/contato", methods=["GET", "POST"])
 def contato ():
     return render_template("contato.html")
     
