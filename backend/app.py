@@ -15,7 +15,7 @@ def sobre ():
 
 @app.route("/contato")
 def contato ():
-    return "Página de Contato Da Empresa"
+    return render_template("contato.html")
     
 #Inicia o servidor
 if __name__ == "__main__": 
