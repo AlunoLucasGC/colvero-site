@@ -6,11 +6,10 @@ app= Flask(__name__)
 
 #Criação da rota que representa a página inicial
 @app.route("/")
-@app.route("/sobre")
-
 def inicio():
     return render_template("index.html")
 
+@app.route("/sobre")
 def sobre ():
     return render_template("sobre.html")
     
